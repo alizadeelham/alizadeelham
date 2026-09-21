@@ -195,3 +195,13 @@ html[lang="fa"] .inquiry-form textarea { text-align: start; }
 @media(max-width:1100px){html[lang="fa"] .portrait figcaption{right:-25px}}
 @media(max-width:800px){html[lang="fa"] .portrait::after{right:-20px}html[lang="fa"] .portrait figcaption{right:-12px}html[lang="fa"] .project-detail{margin-inline:39px 0}}
 @media(max-width:600px){html[lang="fa"] .portrait::after{right:-11px}html[lang="fa"] .portrait::before{inset:10px 10px -10px -10px}html[lang="fa"] .portrait figcaption{right:-10px}html[lang="fa"] .project-detail{margin-inline:0}}
+
+/* Bilingual control: visible outside the collapsed mobile navigation. */
+.language-switch{display:flex;align-items:center;gap:8px;direction:ltr;white-space:nowrap;order:3;font:13px/1.5 var(--sans)}
+.language-switch a{display:inline-flex;align-items:center;min-height:44px;padding:4px;text-underline-offset:5px;color:var(--muted)}
+.language-switch a[aria-current="page"]{color:var(--ink);text-decoration:underline;text-decoration-color:var(--accent)}
+.language-switch a:hover{color:var(--accent-text)}
+.language-switch span{color:var(--line)}
+.header-inner>nav{margin-inline-start:auto}
+@media(min-width:601px) and (max-width:900px){.header-inner{gap:14px}.header-inner>nav{gap:13px}.header-inner nav .button{padding-inline:12px}.language-switch{font-size:12px;gap:5px}}
+@media(max-width:600px){.language-switch{order:1;margin-inline-start:auto;margin-inline-end:14px}.header-inner>.menu-toggle{order:2}.header-inner>nav{order:3;margin-inline-start:0}}
