@@ -205,3 +205,12 @@ html[lang="fa"] .inquiry-form textarea { text-align: start; }
 .header-inner>nav{margin-inline-start:auto}
 @media(min-width:601px) and (max-width:900px){.header-inner{gap:14px}.header-inner>nav{gap:13px}.header-inner nav .button{padding-inline:12px}.language-switch{font-size:12px;gap:5px}}
 @media(max-width:600px){.language-switch{order:1;margin-inline-start:auto;margin-inline-end:14px}.header-inner>.menu-toggle{order:2}.header-inner>nav{order:3;margin-inline-start:0}}
+
+/* Persian-only refinements; the English layout remains unchanged. */
+html[lang="fa"] h1 { direction: rtl; letter-spacing: normal; line-height: 1.15; }
+html[lang="fa"] .header-inner>nav { margin-inline-start: 0; margin-inline-end: auto; }
+@media(max-width:600px){
+ html[lang="fa"] .header-inner>.menu-toggle{order:0}
+ html[lang="fa"] .language-switch{order:1;margin-inline-start:auto;margin-inline-end:0}
+ html[lang="fa"] .header-inner>nav{order:3;margin-inline-end:0}
+}
