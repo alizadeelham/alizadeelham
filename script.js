@@ -34,9 +34,9 @@ if (navigator.clipboard && window.isSecureContext) {
   copyButton.addEventListener('click', async () => {
     try {
       await navigator.clipboard.writeText(email);
-      copyStatus.textContent = 'Email address copied.';
+      copyStatus.textContent = 'آدرس ایمیل کپی شد.';
     } catch {
-      copyStatus.textContent = 'Please select the email address above to copy it, or use Email me.';
+      copyStatus.textContent = 'برای کپی، آدرس ایمیل بالا را انتخاب کنید یا از دکمهٔ «ارسال ایمیل» استفاده کنید.';
     }
   });
 }
@@ -52,13 +52,13 @@ inquiryForm.addEventListener('submit', (event) => {
   const replyTo = String(data.get('email')).trim();
   const message = String(data.get('message')).trim();
   if (!name || !message) {
-    document.getElementById('form-status').textContent = 'Please add your name and a short message.';
+    document.getElementById('form-status').textContent = 'لطفاً نام و پیام کوتاهی وارد کنید.';
     return;
   }
-  const subject = `Product collaboration — ${name}`;
-  const body = `Hi Elham,\n\n${message}\n\n${name}\n${replyTo}`;
+  const subject = `درخواست همکاری در مدیریت محصول — ${name}`;
+  const body = `سلام،\n\n${message}\n\n${name}\n${replyTo}`;
   window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  document.getElementById('form-status').textContent = 'Your email app should open with a draft. If it doesn’t, use the email address or LinkedIn link beside this form.';
+  document.getElementById('form-status').textContent = 'پیش‌نویس باید در برنامهٔ ایمیل شما باز شود. اگر باز نشد، از آدرس ایمیل یا لینک لینکدین کنار فرم استفاده کنید.';
 });
 
 // Open only one project story at a time to keep the page easy to scan.
@@ -70,5 +70,14 @@ projectDetails.forEach((detail) => {
         if (other !== detail) other.open = false;
       });
     }
+  });
+});
+
+// Localize native validation feedback, regardless of the browser UI language.
+inquiryForm.querySelectorAll('input, textarea').forEach((field) => {
+  field.addEventListener('input', () => field.setCustomValidity(''));
+  field.addEventListener('invalid', () => {
+    if (field.validity.valueMissing) field.setCustomValidity('لطفاً این قسمت را تکمیل کنید.');
+    else if (field.validity.typeMismatch) field.setCustomValidity('لطفاً یک آدرس ایمیل معتبر وارد کنید.');
   });
 });
