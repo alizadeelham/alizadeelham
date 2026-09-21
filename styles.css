@@ -214,3 +214,45 @@ html[lang="fa"] .header-inner>nav { margin-inline-start: 0; margin-inline-end: a
  html[lang="fa"] .language-switch{order:1;margin-inline-start:auto;margin-inline-end:0}
  html[lang="fa"] .header-inner>nav{order:3;margin-inline-end:0}
 }
+
+/* Self-hosted Estedad: Arabic-script glyphs only; Latin typography stays intact. */
+@font-face {
+  font-family: "Estedad";
+  src: url("fonts/Estedad-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+0600-06FF,U+0750-077F,U+0870-089F,U+08A0-08FF,U+200C-200D,U+FB50-FDFF,U+FE70-FEFF;
+}
+@font-face {
+  font-family: "Estedad";
+  src: url("fonts/Estedad-SemiBold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  unicode-range: U+0600-06FF,U+0750-077F,U+0870-089F,U+08A0-08FF,U+200C-200D,U+FB50-FDFF,U+FE70-FEFF;
+}
+@font-face {
+  font-family: "Estedad";
+  src: url("fonts/Estedad-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  unicode-range: U+0600-06FF,U+0750-077F,U+0870-089F,U+08A0-08FF,U+200C-200D,U+FB50-FDFF,U+FE70-FEFF;
+}
+@font-face {
+  font-family: "Estedad";
+  src: url("fonts/Estedad-ExtraBold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  unicode-range: U+0600-06FF,U+0750-077F,U+0870-089F,U+08A0-08FF,U+200C-200D,U+FB50-FDFF,U+FE70-FEFF;
+}
+html[lang="fa"] {
+  --serif: "Estedad", Georgia, "Times New Roman", serif;
+  --sans: "Estedad", "Segoe UI", Arial, sans-serif;
+}
+html[lang="fa"] body { font-weight: 400; }
+html[lang="fa"] :is(h1,h2) { font-weight: 800; }
+html[lang="fa"] :is(h3,.hero-statement,.project-title,.proof-title,.portrait figcaption,.project-detail .result) { font-weight: 700; }
+html[lang="fa"] :is(.button,.menu-toggle,.language-switch,nav>a:not(.button),.section-label,.eyebrow,.inquiry-form label) { font-weight: 600; }
