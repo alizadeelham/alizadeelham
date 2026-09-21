@@ -1,0 +1,23 @@
+/* English-only typography. Shared design and Persian styles stay unchanged. */
+@font-face {
+  font-family: "Inter";
+  src: url("fonts/InterVariable.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("fonts/InterVariable-Italic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+}
+html[lang="en"] {
+  --serif: "Inter", "Segoe UI", Arial, sans-serif;
+  --sans: "Inter", "Segoe UI", Arial, sans-serif;
+}
+html[lang="en"] body { font-weight: 400; }
+html[lang="en"] :is(h1,h2) { font-weight: 700; }
+html[lang="en"] :is(h3,.hero-statement,.project-title,.proof-title,.portrait figcaption,.project-detail .result) { font-weight: 600; }
+html[lang="en"] :is(.button,.menu-toggle,.language-switch,nav>a:not(.button)) { font-weight: 600; }
