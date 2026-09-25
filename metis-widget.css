@@ -1,0 +1,5 @@
+/* Bound only the official widget frame; leave Metis UI and behavior intact. */
+iframe[src="https://console.metisai.ir/chat-widget/50a76da4-3142-465e-a015-a0bdf165f91d"] {
+  max-width: calc(100vw - 40px);
+  max-height: calc(100dvh - 100px);
+}

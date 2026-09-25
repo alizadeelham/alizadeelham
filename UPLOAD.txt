@@ -1,0 +1,1 @@
+برای انتشار نسخهٔ دوزبانه، شش فایل index.html، en.html، styles.css، script.js، script-en.js و language-switch.js را در ریشهٔ مخزن آپلود کنید. عکس، رزومه و favicon.svg بدون تغییر می‌مانند. صفحهٔ اصلی فارسی است؛ نسخهٔ انگلیسی در en.html قرار دارد.
